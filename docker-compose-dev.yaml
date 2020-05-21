@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: ./
+    ports:
+      - ${HOST_PORT:-3000}:3000
+    volumes:
+      - ./client:/app/client
+      - ./controllers:/app/controllers
+      - ./lib:/app/lib
+      - ${PG_FARM_DIR}:/opt/pg-farm
+    command: tail -f /dev/null

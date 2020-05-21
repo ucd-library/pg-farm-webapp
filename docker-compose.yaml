@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  server:
+    image: ucdlib/pg-farm-webapp:${WEBAPP_VERSION}
+    ports:
+      - ${HOST_PORT:-3000}:3000
+    volumes:
+      - ${PG_FARM_DIR}:/opt/pg-farm

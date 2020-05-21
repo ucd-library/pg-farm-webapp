@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "proxima-nova","Lucida Grande","Lucida Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1.0rem;
+  line-height: calc(14px * 1.625);
+  color: black;
+  
+  --ucd-blue: #002855;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background: url('images/global-header-bg.svg') center top/cover no-repeat;
+}
+
+header > .logo {
+  height: 50px;
+  padding-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 100px;
+  height: 60px;
+  background-color: white;
+  font-size: 22px;
+  box-shadow: 0 2px 1px rgba(0,40,85,0.15);
+}
+
+.page-title > strong {
+  margin-right: 8px;
+  color: #022851;
+}
+
+.page-title > em {
+  color: #6884A3;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 30px;
+  vertical-align: middle;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button.blue {
+  background-color: #002855;
+}
+
+[type="submit"].button.blue {
+  border: none;
+  font-size: 16px;
+}
+
+main {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-image: url("images/20200120-food-science-uc-davis.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
+}
+
+main > * {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Viewports */
+@media only screen and (max-width: 600px) {
+  header > .logo,
+  .page-title {
+    padding-left: 20px;
+  }
+
+  a.button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .login-box-wrapper {
+    margin: 20px;
+  }
+
+  .login-box {
+    padding: 30px;
+  }
+
+  .login-box p:last-of-type {
+    margin-bottom: 30px;
+  }
+}
