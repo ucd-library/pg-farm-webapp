@@ -17,6 +17,8 @@ const bundle = `
   <script>${loaderSrc}</script>`;
 
 module.exports = (app) => {
+  console.log('Serving assets from: '+config.client.dir);
+
   /**
    * Setup SPA app routes
    */

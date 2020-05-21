@@ -15,7 +15,8 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "watch": "cd client; webpack --config webpack-watch.config.js --watch"
+    "watch": "cd client; webpack --config webpack-watch.config.js --watch",
+    "dist": "cd client; ./build.sh"
   },
   "author": "jrmerz@ucdavis.edu",
   "license": "MIT"

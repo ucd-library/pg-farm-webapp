@@ -13,4 +13,4 @@ COPY server.js .
 
 COPY client client
 
-CMD [ "node" "server.js" ]
+CMD [ "node", "server.js" ]

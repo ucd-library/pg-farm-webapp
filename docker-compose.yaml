@@ -7,3 +7,5 @@ services:
       - ${HOST_PORT:-3000}:3000
     volumes:
       - ${PG_FARM_DIR}:/opt/pg-farm
+    environment: 
+      - CLIENT_ENV=prod
