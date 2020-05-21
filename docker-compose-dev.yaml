@@ -10,5 +10,5 @@ services:
       - ./client:/app/client
       - ./controllers:/app/controllers
       - ./lib:/app/lib
-      - ${PG_FARM_DIR}:/opt/pg-farm
+      - ${PG_FARM_DIR:-/opt/pg-farm}:/opt/pg-farm
     command: tail -f /dev/null
