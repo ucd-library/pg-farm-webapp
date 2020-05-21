@@ -13,6 +13,10 @@ steps:
       - 'TAG_NAME=$TAG_NAME'
 
   - name: "gcr.io/cloud-builders/docker"
+    entrypoint: "bash"
+    args: ["-c", "docker login --username=libosdev --password-stdin < pass.txt"]
+
+  - name: "gcr.io/cloud-builders/docker"
     args: ["build", "-t", "ucdlib/pg-farm-webapp:$TAG_NAME", "."]
 
 images: ["ucdlib/pg-farm-webapp:$TAG_NAME"]
