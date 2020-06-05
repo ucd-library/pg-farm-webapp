@@ -6,6 +6,8 @@ return html`
 <style>
   :host {
     display: block;
+    max-width: 900px;
+    background-color: white;
   }
 </style>
 

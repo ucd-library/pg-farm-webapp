@@ -70,20 +70,55 @@ header > .logo {
 }
 
 main {
-  background-color: white;
-  padding: 10px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
-  /* background-image: url("images/20200120-food-science-uc-davis.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
+  background-color: #e5e9ef;
 }
 
 main > * {
   width: 100%;
+}
+
+#main-header {
+  background-image: url('images/pgfarm-header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#intro-wrapper {
   max-width: 900px;
+}
+
+#intro {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  height: 300px;  
+}
+
+#intro > * {
+  padding-left: 100px;
+  max-width: 600px;
+}
+
+#intro > h2 {
+  margin-bottom: 20px;
+  color: #FFBF00;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+#intro > p {
+  color: white;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+#intro > p > a {
+  color: white;
 }
 
 /* Viewports */

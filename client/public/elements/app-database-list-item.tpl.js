@@ -8,9 +8,6 @@ return html`
     display: block;
     padding: 10px;
     margin: 20px 15px;
-    border: 1px solid #eee;
-    box-shadow: 0 0 3px #555;
-    border-radius: 3px;
   }
 
   pre {
