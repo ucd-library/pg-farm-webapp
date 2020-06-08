@@ -15,31 +15,47 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
   background: url('images/global-header-bg.svg') center top/cover no-repeat;
 }
 
-header > .logo {
+.logo-wrapper {
+  width: 100%;
+  max-width: 900px;
+  align-self: center;
+}
+
+.logo {
+  padding-left: 30px;
   height: 50px;
-  padding-left: 100px;
   display: flex;
   align-items: center;
   justify-content: left;
 }
 
-.page-title {
+.page-title-outer-wrapper {
   display: flex;
+  width: 100%;
+  flex-direction: column;
   align-items: center;
-  justify-content: left;
-  padding-left: 100px;
+  align-self: center;
+  justify-content: center;
   height: 60px;
   background-color: white;
-  font-size: 22px;
   box-shadow: 0 2px 1px rgba(0,40,85,0.15);
 }
 
+.page-title-inner-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.page-title {
+  padding-left: 30px;
+  font-size: 22px;
+}
+
 .page-title > strong {
-  margin-right: 8px;
   color: #022851;
 }
 
@@ -72,6 +88,7 @@ header > .logo {
 main {
   display: flex;
   width: 100%;
+  padding-bottom: 30px;
   flex-direction: column;
   align-items: center;
   background-color: #e5e9ef;
@@ -85,22 +102,25 @@ main > * {
   background-image: url('images/pgfarm-header.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
 }
 
 #intro-wrapper {
+  margin: 0 auto;
+  width: 100%;
   max-width: 900px;
 }
 
 #intro {
+  margin: 0 auto;
   padding: 40px 0;
   display: flex;
   flex-direction: column;
-  height: 300px;  
+  height: 300px;
 }
 
 #intro > * {
-  padding-left: 100px;
+  padding-left: 30px;
+  width: 100%;
   max-width: 600px;
 }
 
