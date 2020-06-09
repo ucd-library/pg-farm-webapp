@@ -10,71 +10,79 @@ export default function render() {
 
       #search-input-wrapper {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
+        flex-flow: row nowrap;
+        justify-content: center;
         padding: 30px;
-        height: 44px;
       }
 
-      #search-input-wrapper > .input-container {
+      #search-input-wrapper .input-container {
+        display: inline-block;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         width: 100%;
-        position: relative;
-        align-items: stretch;
       }
 
       #search-input {
-        display: block;
-        height: calc(1.5em + .75rem);
-        padding: .375rem .75rem;
-        margin: 0 10px;
-        width: 1%;
-        max-width: 600px;
+        flex-grow: 1;
         height: 44px;
+        padding: .375rem .75rem;
+        width: 1%;
+        min-width: 0;
+        max-width: 600px;
+        position: relative;
+
         font-size: 16px;
         font-weight: 400;
         line-height: 1.5;
+
         background-color: white;
+
         border: 1px solid #ced4da;
+        border-right: transparent;
+
         border-radius: .25rem;
-        position: relative;
-        flex: 1 1 auto;
-        min-width: 0;
-        margin-bottom: 0;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
 
       #search-input-button {
-        display: inline-block;
-        border: 1px solid transparent;
         position: relative;
-        top: -10px;
-        left: -32px;
-        z-index: 2;
-        background-color: transparent;
+        left: -10px;
+        background-color: white;
+        border: 1px solid #ced4da;
+        border-left: transparent;
+        
+        border-radius: .25rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
 
       #search-input-button > iron-icon {
         position: absolute;
-        right: 0;
+        top: 10px;
+        right: 10px;
         color: #355B85;
         font-size: 24px;
       }
 
-      #search-input-wrapper > .sort-by {
-        padding-right: 10px;
+      #search-dropdown-outer-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0 0 0 30px;
+      }
+
+      #search-dropdown-outer-wrapper .sort-by {
+        margin-right: 10px;
         color: #022851;
         font-size: 14px;
         font-weight: bold; 
         text-align: right;
         text-transform: uppercase;
-        white-space: nowrap;
       }
 
-      .search-dropdown-wrapper {
+      .search-dropdown-inner-wrapper {
         padding: 10px;
         white-space: nowrap;
         background-color: #002851;
@@ -99,6 +107,30 @@ export default function render() {
         color: #FFBF00;
         background-color: #002851;
       }
+      
+      @media only screen and (max-width: 600px) {
+        #search-input-wrapper {
+          flex-flow: column wrap;
+          padding: 15px 15px 0 15px;
+        }
+
+        #search-input-wrapper .input-container {
+          padding: 0 0 30px 0;
+        }
+
+        #search-input {
+          width: 100%;
+          max-width: initial;
+        }
+
+        #search-input-button {
+          left: 0;
+        }
+
+        #search-dropdown-outer-wrapper {
+          justify-content: flex-end;
+        }
+      }
     </style>
 
     <div id="search-input-wrapper">
@@ -108,16 +140,17 @@ export default function render() {
           <iron-icon class="search-icon" icon="search"></iron-icon>
         </button>
       </div>
-      <span style="width: 30px;"></span>
-      <span class="sort-by">Sort By</span>
-      <div class="search-dropdown-wrapper">
-        <select id="search-dropdown" class="search-dropdown" dir="rtl">
-          <option value="">Name A-Z</option>
-          <option value="">Relevance</option>
-          <option value="">Most Recent</option>
-          <option value="">Oldest</option>
-        </select>
-        <iron-icon class="expand-more" icon="expand-more"></iron-icon>
+      <div id="search-dropdown-outer-wrapper">
+        <span class="sort-by">Sort&nbsp;By</span>
+        <div class="search-dropdown-inner-wrapper">
+          <select id="search-dropdown" class="search-dropdown" dir="rtl">
+            <option value="">Name A-Z</option>
+            <option value="">Relevance</option>
+            <option value="">Most Recent</option>
+            <option value="">Oldest</option>
+          </select>
+          <iron-icon class="expand-more" icon="expand-more"></iron-icon>
+        </div>
       </div>
     </div>
   `

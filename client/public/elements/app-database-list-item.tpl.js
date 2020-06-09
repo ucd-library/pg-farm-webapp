@@ -6,7 +6,6 @@ return html`
 <style>
   :host {
     display: block;
-    padding: 30px;
   }
 
   a {
@@ -50,8 +49,10 @@ return html`
   }
 
   #content-wrapper {
+    padding: 30px;
     display: flex;
     flex-direction: row;
+    background-color: white;
   }
 
  .content {
@@ -59,12 +60,11 @@ return html`
   }
 
   .image {
-    margin-bottom: 20px;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
     display: flex;
     align-items: center;
-    border-radius: 50%;
-    width: 75px !important;
-    height: 70px;
     background-color: #008EAA;
   }
 
@@ -111,6 +111,13 @@ return html`
     border-left: 2px solid var(--ucd-blue);
     padding-left: 13px;
   }
+
+  @media only screen and (max-width: 600px) {
+    #content-wrapper {
+      margin: 15px;
+      padding: 15px;
+    }
+  }
 </style>  
 
 <div id="content-wrapper">
@@ -138,8 +145,11 @@ return html`
         </div>
       </div>
     </div>
-    <div class="image">
-      <img class="icon" src="/images/cloud-sun-solid.svg">
+
+    <div class="image-wrapper">
+      <div class="image">
+        <img class="icon" src="/images/cloud-sun-solid.svg">
+      </div>
     </div>
   </div>
 
