@@ -111,7 +111,7 @@ export default function render() {
       @media only screen and (max-width: 600px) {
         #search-input-wrapper {
           flex-flow: column wrap;
-          padding: 15px 15px 0 15px;
+          padding: 15px 15px 0px 15px;
         }
 
         #search-input-wrapper .input-container {
