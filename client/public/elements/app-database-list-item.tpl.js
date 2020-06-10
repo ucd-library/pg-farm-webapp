@@ -134,6 +134,10 @@ return html`
     margin-bottom: 24px;
   }
 
+  .connection-examples .info-group pre {
+    padding: 10px;
+  }
+
   .connection-examples .info-group > em {
     display: block;
     margin-top: 4px;
