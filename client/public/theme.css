@@ -7,6 +7,7 @@ body {
   color: black;
   
   --ucd-blue: #002855;
+  background-color: gray;
 }
 
 header {
@@ -26,7 +27,6 @@ header {
 }
 
 .logo {
-  padding-left: 30px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -51,7 +51,6 @@ header {
 }
 
 .page-title {
-  padding-left: 30px;
   font-size: 22px;
 }
 
@@ -92,7 +91,6 @@ main {
   justify-content: center;
   
   width: 100%;
-  padding-bottom: 30px;
   background-color: #e5e9ef;
 }
 
@@ -150,9 +148,9 @@ main > * {
 
 /* Viewports */
 @media only screen and (max-width: 600px) {
-  header > .logo,
+  header .logo-wrapper .logo,
   .page-title {
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
   a.button {

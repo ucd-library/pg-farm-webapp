@@ -23,8 +23,7 @@ return html`
   }
 
   pre {
-    color: #eee;
-    background-color: #333;
+    background-color: #FFECB2;
     overflow: auto;
   }
 
@@ -38,9 +37,6 @@ return html`
     margin-bottom: 4px;
     font-size: 18px;
     color: #191919;
-  }
-  h4 {
-    margin-bottom: 5px;
   }
 
   #description {
@@ -57,13 +53,13 @@ return html`
     background-color: white;
   }
 
- .content {
-    margin-right: 20px;
-  }
-
   .top-row {
     display: flex;
     flex-direction: row;
+  }
+
+  .image-wrapper {
+    padding: 0 0 20px 20px;
   }
 
   .image {
@@ -115,14 +111,43 @@ return html`
   }
 
   .connection-examples {
-    border-left: 2px solid var(--ucd-blue);
-    padding-left: 13px;
+    margin-top: 8px;
+    padding: 20px;
+    background-color: #FFF9E5;
+  }
+
+  .connection-examples > h4,
+  .connection-examples .info-group > pre,
+  .connection-examples .info-group {
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .connection-examples > h4:first-of-type {
+    margin-top: 0;
+  }
+
+  .connection-examples .info-group {
+    margin-top: 6px;
+    margin-bottom: 24px;
+  }
+
+  .connection-examples .info-group > em {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 6px;
   }
 
   @media only screen and (max-width: 600px) {
     #content-wrapper {
       margin: 15px;
       padding: 15px;
+    }
+
+    .image-wrapper {
+      padding: 0 0 20px 20px;
     }
   }
 </style>  
@@ -133,11 +158,12 @@ return html`
       <div class="left-side-content">
         <h2>${this.database.CLUSTER_NAME}</h2>
       
-        <!--- Description --->
+        <!--- TODO: Temp description for layout purposes only - START --->
         <p>
           4km grid, 10 year average weather data for Pacific 
           northwest. Used by the Poplar Model web application.
         </p>
+        <!--- Temp description for layout purposes only - END --->
 
         <div 
           ?hidden="${!this.database.DESCRIPTION}" 
@@ -205,7 +231,8 @@ return html`
         Connection Examples
       </a>
     </h3>
-    <div ?hidden="${!this.connectionHelpOpen}" class="connection-examples">
+    <!--<div ?hidden="${!this.connectionHelpOpen}" class="connection-examples">-->
+    <div class="connection-examples">
       <h4>JDBC Connection String</h4>
       <div class="info-group">
         <pre>  jdbc:postgresql://${this.database.CLUSTER_NAME}.${window.location.hostname}:${this.database.PG_FARM_REPL_PORT}/${this.database.PGR_DATABASE}?user=${this.database.PGR_USER}&password=${this.database.PGR_PASSWORD}&ssl=true</pre>
@@ -218,9 +245,9 @@ return html`
 
       <h4>R Connection</h4>
       <div class="info-group">
-        <div>
+        <em>
           Using the <a href="https://cran.r-project.org/web/packages/RPostgres/index.html" target="_blank">RPostgres</a> library
-        </div>
+        </em>
       <pre>
   con <- DBI::dbConnect(
     RPostgres::Postgres(), 
@@ -234,9 +261,9 @@ return html`
 
     <h4>Python Connection</h4>
     <div class="info-group">
-      <div>
+      <em>
         Using the <a href="https://pypi.org/project/psycopg2/" target="_blank">psycopg2</a> library
-      </div>
+      </em>
       <pre>
   PGHOST="${this.database.CLUSTER_NAME}.${window.location.hostname}"
   PGDATABASE="${this.database.PGR_DATABASE}"
@@ -254,9 +281,7 @@ return html`
     </div>
 
     <h4>SSL</h4>
-    <div>
-      Note: Only secure SSL connections are allowed to the database
-    </div>
+    <em>Note: Only secure SSL connections are allowed to the database</em>
   </div>
 </div>
 `;}

@@ -12,7 +12,7 @@ export default function render() {
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
-        padding: 30px;
+        padding: 30px 10px;
       }
 
       #search-input-wrapper .input-container {
@@ -51,7 +51,6 @@ export default function render() {
         background-color: white;
         border: 1px solid #ced4da;
         border-left: transparent;
-        
         border-radius: .25rem;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
