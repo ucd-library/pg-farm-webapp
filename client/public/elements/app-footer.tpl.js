@@ -74,32 +74,43 @@ export default function render() {
       .uc-footer .list--pipe {
         margin-bottom: 1em;
       }
-      .list--pipe, .list-wrapper--pipe ul, .vm-teaser__position, .vm-teaser__categories, .vm-teaser__byline {
+      .list--pipe {
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
       p {
-        margin-top: 0;
-        margin-bottom: 1em;
+        margin: 1.5rem 0;
+        line-height: 1.5rem;
       }
 
-      .list--pipe li, .list-wrapper--pipe ul li, .vm-teaser__position li, .vm-teaser__categories li, .vm-teaser__byline li {
+      .list--pipe li {
+        display: inline-block;
         border-right: 1px solid #999;
         margin-right: .25em;
         padding-right: .5em;
-        display: inline-block;
-        line-height: 1;
+        
+        line-height: 2.0rem;
       }
-      .list--pipe li, .list-wrapper--pipe ul li, .vm-teaser__position li, .vm-teaser__categories li, .vm-teaser__byline li {
+      .list--pipe li {
         list-style: none;
       }
+
+      .list--pipe li:last-of-type {
+          border-right: transparent;
+        }
 
       .l-container:after {
         content: "";
         display: table;
         clear: both;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .list--pipe li {
+          display: block;
+        }
       }
     </style>
 
@@ -116,16 +127,24 @@ export default function render() {
         </div>
 
         <div class="region region-footer-credits">
-          <div id="block-sitefarm-one-uccredits" class="uc-footer block block-uc-credits block-uc-credits-block">
+          <div class="uc-footer block block-uc-credits block-uc-credits-block">
+            <p style="margin: 0 auto; max-width: 400px; padding-bottom: 20px;">
+              <a href="">University of California, Davis</a>, One Shields Avenue, Davis, CA 95616 | 530-752-1011
+            </p>
+
             <ul class="list--pipe">
-              <li><a href="mailto:sitefarm@ucdavis.edu">Questions or comments?</a></li>
+              <li><a href="mailto:library@ucdavis.edu">Questions or comments?</a></li>
               <li><a href="http://ucdavis.edu/help/privacy-accessibility.html">Privacy & Accessibility</a></li>
               <li><a href="http://occr.ucdavis.edu/poc/">Principles of Community</a></li>
               <li><a href="http://www.universityofcalifornia.edu/">University of California</a></li>
               <li><a href="/sitemap">Sitemap</a></li>
               <li>Last update: June 5, 2020</li>
             </ul>
-            <p>Copyright © The Regents of the University of California, Davis campus. All rights reserved.</p>
+
+            <p>
+              Copyright © The Regents of the University of California, Davis campus. 
+              All rights reserved.
+            </p>
           </div>
         </div>
       </div>
