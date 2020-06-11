@@ -9,6 +9,10 @@ return html`
     width: 100%;
     max-width: 960px;
   }
+
+  app-database-list-item {
+    margin-bottom: 30px;
+  }
 </style>
 
 ${this.databases.map(database => html`

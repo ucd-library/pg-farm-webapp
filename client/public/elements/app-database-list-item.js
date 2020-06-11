@@ -1,6 +1,8 @@
 import { LitElement } from 'lit-element';
 import render from "./app-database-list-item.tpl.js"
 
+import './app-db-icon'
+
 const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
 
@@ -34,15 +36,12 @@ export default class AppDatabaseListItem extends LitElement {
     }
   }
 
-  updated(props) {
-    if( props.has('database') ) {
-      console.log(this.database);
-      this.shadowRoot.querySelector('#description').innerHTML = md.render(this.database.DESCRIPTION);
-    }
-  }
-
   _onConnectionToggleClicked() {
     this.connectionHelpOpen = !this.connectionHelpOpen;
+  }
+
+  _onViewDocClicked() {
+    document.querySelector('app-description-popup').show(this.database);
   }
 
 }

@@ -25,42 +25,29 @@ export default function render() {
       #search-input {
         flex-grow: 1;
         height: 44px;
-        padding: .375rem .75rem;
-        width: 1%;
-        min-width: 0;
+        width: 100%;
+        min-width: 200px;
         max-width: 600px;
         position: relative;
-
+        border: none;
+        padding-left: 10px;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.5;
-
-        background-color: white;
-
-        border: 1px solid #ced4da;
+        background-color: var(--color-white);
+        color: var(--color-hint-text);
         border-right: transparent;
-
-        border-radius: .25rem;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: none;
       }
 
       #search-input-button {
-        position: relative;
-        left: -10px;
-        background-color: white;
-        border: 1px solid #ced4da;
-        border-left: transparent;
-        border-radius: .25rem;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        background-color:  var(--color-white);
+        border: none;
+        border-radius: none;
       }
 
       #search-input-button > iron-icon {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: #355B85;
+        color: var(--color-ucdblue70);
         font-size: 24px;
       }
 
@@ -74,7 +61,7 @@ export default function render() {
 
       #search-dropdown-outer-wrapper .sort-by {
         margin-right: 10px;
-        color: #022851;
+        color: var(--color-aggie-blue);
         font-size: 14px;
         font-weight: bold; 
         text-align: right;
@@ -88,13 +75,20 @@ export default function render() {
       }
 
       #search-dropdown {
-        padding-left: 14px;
+        padding: 10px 52px 10px 10px;
         color: white;
         font-size: 16px;
-        background-color: #002851;
+        background-color: var(--color-aggie-blue);
         outline-offset: 1px;
         border: none;
         border-radius: 0;
+
+        /* padding: 2px 2px 2px 2px; */
+        border: none; 
+        background-image: url("/images/expand-more.svg");
+        background-position: right center;
+        background-repeat: no-repeat;
+
         -o-appearance: none;
         -ms-appearance: none;
         -webkit-appearance: none;
@@ -102,11 +96,6 @@ export default function render() {
         appearance: none;
       }
 
-      .expand-more {
-        color: #FFBF00;
-        background-color: #002851;
-      }
-      
       @media only screen and (max-width: 600px) {
         #search-input-wrapper {
           flex-flow: column wrap;
@@ -141,15 +130,10 @@ export default function render() {
       </div>
       <div id="search-dropdown-outer-wrapper">
         <span class="sort-by">Sort&nbsp;By</span>
-        <div class="search-dropdown-inner-wrapper">
-          <select id="search-dropdown" class="search-dropdown" dir="rtl">
-            <option value="">Name A-Z</option>
-            <option value="">Relevance</option>
-            <option value="">Most Recent</option>
-            <option value="">Oldest</option>
-          </select>
-          <iron-icon class="expand-more" icon="expand-more"></iron-icon>
-        </div>
+        <select id="search-dropdown" class="search-dropdown" dir="rtl">
+          <option value="a-z">Name A-Z</option>
+          <option value="z-a">Name Z-A</option>
+        </select>
       </div>
     </div>
   `
