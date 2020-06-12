@@ -1459,9 +1459,11 @@ const xi=ai`<iron-iconset-svg name="icons" size="24">
   }
 </style>
 
+<div style="padding: 10px;">
 ${this.databases.map(t=>I`
   <app-database-list-item .database="${t}"></app-database-list-item>
 `)}
+</div>
 
 `}function ki(){return I`
 
@@ -1749,154 +1751,138 @@ conn=psycopg2.connect(conn_string)
 
 <img src="${this.url}" />
 `}customElements.define("app-search-box",class extends X{static get properties(){return{databases:{type:Array}}}constructor(){super(),this.render=K.bind(this),this.databases=Object.values(APP_CONFIG.databases)}_onInputKeyup(t){this.filter=t.currentTarget.value,this._sendUpdate()}_onSelectChange(t){this.sort=t.currentTarget.value,this._sendUpdate()}_sendUpdate(){window.dispatchEvent(new CustomEvent("search",{detail:{filter:new RegExp(this.filter||".*","i"),sort:this.sort||"a-z"}}))}});const Pi={weather:{name:"cloud-sun-solid.svg",color:"var(--color-putah-creek)"},wine:{name:"wine-glass-alt-solid.svg",color:"var(--color-double-decker)"},default:{name:"database-solid.svg",color:"var(--color-aggie-gold)"}};customElements.define("app-db-icon",class extends X{static get properties(){return{size:{type:Number},type:{type:String},url:{type:String},color:{type:String}}}constructor(){super(),this.render=Mi.bind(this),this.size=50,this.url="/images/"+Pi.default.name,this.style.backgroundColor=Pi.default.color}updated(t){if(t.has("type")&&(Pi[this.type]?(this.url="/images/"+Pi[this.type].name,this.style.backgroundColor=Pi[this.type].color):(this.url="/images/"+Pi.default.name,this.style.backgroundColor=Pi.default.color)),t.has("size")){let t=this.shadowRoot.querySelector("img"),e=Math.floor(.7*this.size)+"px";t.style.height=e,t.style.width=e,this.style.borderRadius=this.size+"px",this.style.height=e,this.style.width=e,this.style.padding=Math.floor(this.size/2*.3)+"px"}}});new(r(4));customElements.define("app-database-list-item",class extends X{static get properties(){return{database:{type:Object},connectionHelpOpen:{type:Boolean}}}constructor(){super(),this.render=ki.bind(this),this.connectionHelpOpen=!1,this.database={CLUSTER_NAME:"",DESCRIPTION:"",PGR_DATABASE:"",PGR_PASSWORD:"",PGR_SCHEMA:"",PGR_URL:"",PGR_USER:"",PG_FARM_CONTROLLER_PORT:"",PG_FARM_PGR_PORT:"",PG_FARM_REPL_PORT:"",PG_FARM_VERSION:"",PG_VERSION:""}}_onConnectionToggleClicked(){this.connectionHelpOpen=!this.connectionHelpOpen}_onViewDocClicked(){document.querySelector("app-description-popup").show(this.database)}});const Ai={"a-z":t=>t.sort((t,e)=>t.CLUSTER_NAME<e.CLUSTER_NAME?-1:1),"z-a":t=>t.sort((t,e)=>t.CLUSTER_NAME>e.CLUSTER_NAME?-1:1)};function Ei(){return I`
-    <style>
-      footer {
-        margin-top: 2em;
-        padding: 4em 0 6em;
-        background-color: #002855;
-        color: white;
-      }
+<style>
+  :host {
+    display: block;
+    background-color: var(--color-aggie-blue);
+    line-height: 24px;
+    color: white;
+    padding: 60px 0 35px 0
+  }
+  * {
+    box-sizing: border-box;
+  }
+  a, a:visited {
+    color: var(--color-white);
+  }
+  footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 10px;
+  }
 
-      .l-container {
-        width: 95%;
-        margin: 0 auto;
-      }
+  .layout {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+  }
+  .layout.center {
+    align-items: center;
+  }
 
-      .footer-spacer {
-        position: relative;
-        margin: 4em 0;
-        text-align: center;
-      }
+  .layout .lib-addr-info {
+    width: 250px;
+  }
+  .layout .online-strategy {
+    flex: 1;
+    padding-left: 10px;
+  }
+  .layout .online-strategy h3 {
+    margin-top: 0;
+  }
+  .layout .logo-line {
+    border-top: 1px solid rgba(255,255,255,0.25);
+    flex: 1;
+  }
 
-      .u-align--center {
-        margin: 0 auto !important;
-        text-align: center !important;
-      }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+  }
+  li:after {
+    content: "|";
+    padding: 0 10px;
+  }
+  li:last-child:after {
+    content: "";
+    padding: 0;
+  }
 
-      .l-container:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
+  @media(max-width: 600px) {
+    .layout.top {
+      display: block;
+      padding-left: 30px;
+    }
+    .layout .online-strategy {
+      padding-left: 0;
+    }
+  }
+</style>
 
-      .footer-spacer__hr {
-        position: absolute;
-        top: 50%;
-        z-index: 1;
-        margin: 0;
-        width: 100%;
-      }
-      .hr-invert {
-        border-color: rgba(255,255,255,0.25);
-      }
-      hr {
-        display: block;
-        border: 0;
-        height: 1px;
-        border-top: 1px solid #002855;
-        margin: 2em 0;
-        padding: 0;
-      }
-      hr {
-        box-sizing: content-box;
-        height: 0;
-      }
-
-      .footer-spacer__logo {
-        display: inline-block;
-        position: relative;
-        padding: 0 2em;
-        z-index: 2;
-        background-color: #002855;
-      }
-
-      footer a {
-        color: white;
-      }
-
-      .uc-footer {
-        text-align: center;
-      }
-
-      .uc-footer .list--pipe {
-        margin-bottom: 1em;
-      }
-      .list--pipe {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      p {
-        margin: 1.5rem 0;
-        line-height: 1.5rem;
-      }
-
-      .list--pipe li {
-        display: inline-block;
-        border-right: 1px solid #999;
-        margin-right: .25em;
-        padding-right: .5em;
-        
-        line-height: 2.0rem;
-      }
-      .list--pipe li {
-        list-style: none;
-      }
-
-      .list--pipe li:last-of-type {
-          border-right: transparent;
-        }
-
-      .l-container:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      @media only screen and (max-width: 600px) {
-        .list--pipe li {
-          display: block;
-        }
-      }
-    </style>
-
-<footer class="l-footer footer">
-      <div class="l-container">
-
-        <div class="footer-spacer">
-          <hr class="footer-spacer__hr hr-invert">
-          <div class="footer-spacer__logo">
-            <a href="https://www.ucdavis.edu/">
-              <img src="/images/uc-logo-white.svg" class="ucd-logo" alt="UC Davis footer logo" />
-            </a>
-          </div>
-        </div>
-
-        <div class="region region-footer-credits">
-          <div class="uc-footer block block-uc-credits block-uc-credits-block">
-            <p style="margin: 0 auto; max-width: 400px; padding-bottom: 20px;">
-              <a href="">University of California, Davis</a>, One Shields Avenue, Davis, CA 95616 | 530-752-1011
-            </p>
-
-            <ul class="list--pipe">
-              <li><a href="mailto:library@ucdavis.edu">Questions or comments?</a></li>
-              <li><a href="http://ucdavis.edu/help/privacy-accessibility.html">Privacy & Accessibility</a></li>
-              <li><a href="http://occr.ucdavis.edu/poc/">Principles of Community</a></li>
-              <li><a href="http://www.universityofcalifornia.edu/">University of California</a></li>
-              <li><a href="/sitemap">Sitemap</a></li>
-              <li>Last update: June 5, 2020</li>
-            </ul>
-
-            <p>
-              Copyright © The Regents of the University of California, Davis campus. 
-              All rights reserved.
-            </p>
-          </div>
-        </div>
+<footer>
+  <div class="layout top">
+    <div class="lib-addr-info">
+      <div style="margin-bottom: 30px;">
+        <a href="https://www.library.ucdavis.edu" target="_blank">
+          <img src="/images/ucd-logo-main-new-white.png" alt="UC Davis Library logo" />
+        </a>
       </div>
-    </footer>
-  `}customElements.define("app-database-list",class extends X{static get properties(){return{databases:{type:Array}}}constructor(){super(),this.render=Si.bind(this);let t=Object.values(APP_CONFIG.databases);Ai["a-z"](t),this.databases=t,window.addEventListener("search",t=>this._onSearch(t.detail))}_onSearch(t){let e=Object.values(APP_CONFIG.databases).filter(e=>e.CLUSTER_NAME.match(t.filter)||(e.ABSTRACT||"").match(t.filter)||(e.DESCRIPTION||"").match(t.filter));Ai[t.sort](e),this.databases=e}});function Li(){return I`
+      <div>
+        <p>
+          UC Davis Library<br />
+          100 NW Quad<br />
+          University of California, Davis<br />
+          Davis, CA 95616<br />
+          (530) 752-8792<br />
+          <a href="mailto:library@ucdavis.edu">library@ucdavis.edu</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="online-strategy">
+      <h3>Development Team</h3>
+      <div>
+        The <a href="https://www.library.ucdavis.edu/service/online-strategy-2/">Online Strategy team at the UC Davis Library</a> repositions Library data for the digital age.
+      </div>
+    </div>
+  </div>
+
+  <div class="layout center" style="margin: 64px 0">
+    <div class="logo-line"></div>
+    <div style="padding: 0 32px;">
+      <a href="https://www.ucdavis.edu/">
+        <img src="/images/uc-logo-white.svg" style="height:40px" alt="UC Davis logo" />
+      </a>
+    </div>
+    <div class="logo-line"></div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="https://www.ucdavis.edu/">University of California, Davis</a>, One Shields Avenue, Davis, CA 95616 | 530-752-1011
+  </div>
+
+  <div style="text-align:center; margin: 15px 0">
+    <ul>
+      <li><a href="mailto:library@ucdavis.edu">Questions or comments?</a></li>
+      <li><a href="http://ucdavis.edu/help/privacy-accessibility.html">Privacy & Accessibility</a></li>
+      <li><a href="http://occr.ucdavis.edu/poc/">Principles of Community</a></li>
+      <li><a href="http://www.universityofcalifornia.edu/">University of California</a></li>
+    </ul>
+  </div>
+
+  <div>
+    Copyright © The Regents of the University of California, Davis campus. 
+    All rights reserved.
+  </div>
+</footer>`}customElements.define("app-database-list",class extends X{static get properties(){return{databases:{type:Array}}}constructor(){super(),this.render=Si.bind(this);let t=Object.values(APP_CONFIG.databases);Ai["a-z"](t),this.databases=t,window.addEventListener("search",t=>this._onSearch(t.detail))}_onSearch(t){let e=Object.values(APP_CONFIG.databases).filter(e=>e.CLUSTER_NAME.match(t.filter)||(e.ABSTRACT||"").match(t.filter)||(e.DESCRIPTION||"").match(t.filter));Ai[t.sort](e),this.databases=e}});function Li(){return I`
 
 <style>
   :host {
