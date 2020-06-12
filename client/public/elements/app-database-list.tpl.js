@@ -15,8 +15,10 @@ return html`
   }
 </style>
 
+<div style="padding: 10px;">
 ${this.databases.map(database => html`
   <app-database-list-item .database="${database}"></app-database-list-item>
 `)}
+</div>
 
 `;}
