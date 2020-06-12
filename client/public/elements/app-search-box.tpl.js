@@ -123,14 +123,18 @@ export default function render() {
 
     <div id="search-input-wrapper">
       <div class="input-container">
-        <input type="text" id="search-input" name="search-input" placeholder="Search databases" value="">
+        <input type="text" 
+          id="search-input" 
+          name="search-input" 
+          placeholder="Search databases" 
+          @keyup="${this._onInputKeyup}">
         <button id="search-input-button" type="button">
           <iron-icon class="search-icon" icon="search"></iron-icon>
         </button>
       </div>
       <div id="search-dropdown-outer-wrapper">
         <span class="sort-by">Sort&nbsp;By</span>
-        <select id="search-dropdown" class="search-dropdown" dir="rtl">
+        <select id="search-dropdown" class="search-dropdown" dir="rtl" @change="${this._onSelectChange}">
           <option value="a-z">Name A-Z</option>
           <option value="z-a">Name Z-A</option>
         </select>

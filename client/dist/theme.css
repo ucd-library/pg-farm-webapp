@@ -1,12 +1,147 @@
+html {
+  --color-redbud : #C6007E;
+  --color-double-decker : #C10230;
+  --color-poppy : #F18A00;
+  --color-aggie-gold : #FFBF00;
+  --color-quad : #3DAE2B;
+  --color-putah-creek : #008EAA;
+  --color-gunrock : #0047BA;
+  --color-pinot : #76236C;
+
+  --color-black90 : #191919;
+  --color-hint-text : #666666;
+  --color-aggie-blue : #022551;
+  --color-ucdblue70 : #355B85;
+  --color-ucdblue50 : #6884A3;
+  --color-ucdblue20 : #B3C1D1;
+  --color-ucdblue5 : #E5E9EF;
+  --color-ucdgold30 : #FFECB2;
+  --color-ucdgold10 : #FFF9E5;
+  --color-white : #FFFFFF;
+}
+
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_regular_macroman/proximanova-regular-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_regular_macroman/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_regular_macroman/proximanova-regular-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_regular_macroman/proximanova-regular-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_regular_macroman/proximanova-regular-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_regular_macroman/proximanova-regular-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_italic_macroman/proximanova-regularit-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_italic_macroman/proximanova-regularit-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_italic_macroman/proximanova-regularit-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_italic_macroman/proximanova-regularit-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_italic_macroman/proximanova-regularit-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_italic_macroman/proximanova-regularit-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bold_macroman/proximanova-bold-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bold_macroman/proximanova-bold-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bold_macroman/proximanova-bold-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bold_macroman/proximanova-bold-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bold_macroman/proximanova-bold-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bold_macroman/proximanova-bold-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bolditalic_macroman/proximanova-boldit-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bolditalic_macroman/proximanova-boldit-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bolditalic_macroman/proximanova-boldit-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bolditalic_macroman/proximanova-boldit-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bolditalic_macroman/proximanova-boldit-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_bolditalic_macroman/proximanova-boldit-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_light_macroman/proximanova-light-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_light_macroman/proximanova-light-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_light_macroman/proximanova-light-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_light_macroman/proximanova-light-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_light_macroman/proximanova-light-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_light_macroman/proximanova-light-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_lightitalic_macroman/proximanova-lightit-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_lightitalic_macroman/proximanova-lightit-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_lightitalic_macroman/proximanova-lightit-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_lightitalic_macroman/proximanova-lightit-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_lightitalic_macroman/proximanova-lightit-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_lightitalic_macroman/proximanova-lightit-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_medium_macroman/proximanova-medium-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_medium_macroman/proximanova-medium-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_medium_macroman/proximanova-medium-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_medium_macroman/proximanova-medium-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_medium_macroman/proximanova-medium-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_medium_macroman/proximanova-medium-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_mediumitalic_macroman/proximanova-mediumit-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_mediumitalic_macroman/proximanova-mediumit-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_mediumitalic_macroman/proximanova-mediumit-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_mediumitalic_macroman/proximanova-mediumit-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_mediumitalic_macroman/proximanova-mediumit-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_mediumitalic_macroman/proximanova-mediumit-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibold_macroman/proximanova-semibold-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibold_macroman/proximanova-semibold-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibold_macroman/proximanova-semibold-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibold_macroman/proximanova-semibold-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibold_macroman/proximanova-semibold-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibold_macroman/proximanova-semibold-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: Proxima-Nova;
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibolditalic_macroman/proximanova-semiboldit-webfont.eot");
+  src: url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibolditalic_macroman/proximanova-semiboldit-webfont.eot?#iefix") format("embedded-opentype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibolditalic_macroman/proximanova-semiboldit-webfont.woff2") format("woff2"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibolditalic_macroman/proximanova-semiboldit-webfont.woff") format("woff"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibolditalic_macroman/proximanova-semiboldit-webfont.ttf") format("truetype"),
+     url("https://campusfont.ucdavis.edu/proxima-nova/proximanova_semibolditalic_macroman/proximanova-semiboldit-webfont.svg#Proxima-Nova") format("svg");
+  font-weight: 600;
+  font-style: italic;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "proxima-nova","Lucida Grande","Lucida Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 1.0rem;
-  line-height: calc(14px * 1.625);
-  color: black;
-  
-  --ucd-blue: #002855;
+  line-height: 18px;
+  color: var(--color-black90);
+  background-color: var(--color-ucdblue5);
 }
 
 header {
@@ -15,82 +150,119 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
   background: url('images/global-header-bg.svg') center top/cover no-repeat;
 }
 
-header > .logo {
+.logo-wrapper {
+  width: 100%;
+  max-width: 900px;
+  align-self: center;
+}
+
+.logo {
   height: 50px;
-  padding-left: 100px;
   display: flex;
   align-items: center;
   justify-content: left;
 }
 
-.page-title {
+.page-title-outer-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: left;
-  padding-left: 100px;
-  height: 60px;
-  background-color: white;
-  font-size: 22px;
-  box-shadow: 0 2px 1px rgba(0,40,85,0.15);
-}
-
-.page-title > strong {
-  margin-right: 8px;
-  color: #022851;
-}
-
-.page-title > em {
-  color: #6884A3;
-}
-
-.button {
-  display: inline-block;
-  padding: 13px 30px;
-  vertical-align: middle;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.button.blue {
-  background-color: #002855;
-}
-
-[type="submit"].button.blue {
-  border: none;
-  font-size: 16px;
-}
-
-main {
-  background-color: white;
-  padding: 10px;
-  display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
-  /* background-image: url("images/20200120-food-science-uc-davis.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
+  align-self: center;
+  justify-content: center;
+  height: 60px;
+  background-color: var(--color-white);
 }
 
-main > * {
+.page-title-inner-wrapper {
   width: 100%;
   max-width: 900px;
 }
 
+.page-title {
+  font-size: 28px;
+}
+
+.page-title > .strong {
+  color: var(--color-aggie-blue);
+  font-weight: bold;
+}
+
+.page-title > .italic {
+  color: var(--color-ucdblue50);
+  font-style: italic;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+}
+
+main > * {
+  width: 100%;
+}
+
+#main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url('images/pgfarm-header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#intro-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+#intro {
+  padding: 40px 0;
+  height: 100%;
+  max-height: 300px;
+}
+
+#intro > * {
+  padding-left: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+#intro > h2 {
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: var(--color-aggie-gold);
+  font-size: 28px;
+  line-height: 35px;
+}
+
+#intro > p {
+  margin: 0;
+  padding: 0;
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 23px;
+}
+
+#intro > p > a {
+  color: var(--color-white);
+}
+
 /* Viewports */
 @media only screen and (max-width: 600px) {
-  header > .logo,
+  header .logo-wrapper .logo,
   .page-title {
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
   a.button {
@@ -98,15 +270,15 @@ main > * {
     margin: 0 auto;
   }
 
-  .login-box-wrapper {
-    margin: 20px;
+  #intro {
+    padding: 40px 30px;
   }
 
-  .login-box {
-    padding: 30px;
+  #intro > * {
+    padding-left: 0;
   }
 
-  .login-box p:last-of-type {
-    margin-bottom: 30px;
+  #search-input-wrapper {
+    padding: 15px;
   }
 }

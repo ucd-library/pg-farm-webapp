@@ -191,7 +191,7 @@ return html`
       </div>
       <div>
         API Playground via Swagger.io: 
-        <a href="https://editor.swagger.io/?url=${this.database.PGR_URL}">API Playground</a>
+        <a href="https://editor.swagger.io/?url=${this.database.PGR_URL}" target="_blank">API Playground</a>
       </div>
     </div>
 
